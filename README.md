@@ -1,3 +1,5 @@
+Note: Please download files from google drive before using the code : https://drive.google.com/drive/folders/1jXQpNCvXfQXWLxI41C244JdFgxK_sRCF?usp=sharing
+
 # tf-pose-estimation
 
 'Openpose', human pose estimation algorithm, have been implemented using Tensorflow. It also provides several variants that have some changes to the network structure for **real-time processing on the CPU or low-power embedded devices.**
