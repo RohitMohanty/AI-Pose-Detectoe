@@ -1,0 +1,22 @@
+ company:
+ ISS ESG Raw Data:
+	89 factors and 54 distinct raw data points
+	9600 corp - 6500 listed and 3100 assigned
+	no mention of data timeline
+	
+ akadia standardized esg data:
+ 	200 datapoints
+	70% market cap covered
+	5 days of turn around time
+	5yrs of history data
+	
+ sensefolio esg scores:
+	more than 20k companies
+	esg scoring on 50 criterias and 11 sub categories
+	14 yrs of history data
+
+ truevalue ESG Data:
+	Data Frequency: Daily; Update Frequency: Daily
+
+     	
+	

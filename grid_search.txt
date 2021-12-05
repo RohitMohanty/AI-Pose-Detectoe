@@ -1,0 +1,94 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+    bool find_p(int pos,int x, int y, vector <vector <char>> &grid, string &pattern,int a, vector <pair<int,int>> &ad, string &answer)
+    {
+        if(pos==pattern.size())
+        {
+            for(int i=0;i<ad.size();i++)
+            {
+                answer+=to_string(ad[i].first);
+                answer+=to_string(ad[i].second);
+            }
+            
+            return true;
+        }
+        
+        
+        if(x>=a || y>=a || x<0 || y<0)
+                return false;
+        if(grid[x][y]==pattern[pos])
+        {
+            char temp= grid[x][y];
+            grid[x][y]='#';
+            ad.push_back(make_pair(x,y));
+            
+        bool result= find_p(pos+1,x+1,y,grid,pattern,a,ad,answer)||find_p(pos+1,x-1,y,grid,pattern,a,ad,answer)||find_p(pos+1,x,y+1,grid,pattern,a,ad,answer)||find_p(pos+1,x,y-1,grid,pattern,a,ad,answer);
+         
+         grid[x][y]=temp;
+         ad.pop_back();
+                    
+                    return result;
+        }
+        
+        else
+        return false;
+    }
+
+
+
+int main()
+{
+   string pattern;
+   cin>>pattern;
+   
+   int a;
+   cin>>a;
+   
+   vector <vector <char>> grid(a,vector <char>(a,'a'));
+   vector <pair <int,int>> ad;
+   string answer="";
+   
+   for(int i=0;i<a;i++)
+   {
+       for(int j=0;j<a;j++)
+       {
+           char letter;
+           cin>>letter;
+           grid[i][j]=letter;
+       }
+   }
+   
+   for(int i=0;i<a;i++)
+   {
+       for(int j=0;j<a;j++)
+       {
+           if(grid[i][j]==pattern[0])
+           {
+               if(find_p(0,i,j,grid,pattern,a,ad,answer))
+               {
+                   cout<<"yes "<<answer;
+                   return 0;
+               }
+           }
+       }
+       
+   }
+   
+   cout<<"no"<<endl;
+   
+   return 0;
+   
+   
+   
+}
